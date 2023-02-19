@@ -4,10 +4,11 @@ import java.util.Arrays;
 
 /*
 * https://leetcode.com/problems/next-greater-element-iii/
+* Figure out what happens if number overflows
 * */
 public class NextGreaterElement {
     public static void main(String[] args) {
-        int num = 2147483486;
+        int num = 1999999999;
         System.out.println("Next Greater Element " + nextGreaterElement(num) );
     }
 
@@ -27,10 +28,12 @@ public class NextGreaterElement {
         {
             if(start < len) {
             Arrays.sort(numArr,start+1,len);
-            num = 0;
+            long numL = 0;
             for(int val : numArr)
-                num = Math.addExact(val , num*10);
-            return num;
+                numL =val + numL*10;
+            if(numL> Integer.MAX_VALUE)
+                return -1;
+            return Integer.parseInt(numL+"");
         }else{
             return -1;
         }
