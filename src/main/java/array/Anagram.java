@@ -8,7 +8,6 @@ public class Anagram {
         Scanner sc = new Scanner(System.in);
         String strOne = sc.next();
         String strTwo = sc.next();
-
         System.out.println("Is Anagram : "+ isAnagram(strOne,strTwo));
     }
 
