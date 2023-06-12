@@ -10,3 +10,15 @@ i.e. 10^k = x. (i.e. value of k is basically logx)
 e.g. log10 to the base 10 is 1.
 
 Best case, worst case and average case.
+
+--- Asymptotic notations :
+
+Big O : Exact or upper bound.
+e.g. O(n) means time taken to execute the task can maximum be some constant times n.
+Can be used to represent worst case analysis.
+
+Theta : Exact.
+e.g. Theta(n) means time taken would exactly be equal to some constant times n irrespective of the input.
+
+Omega : Exact or Lower.
+e.g. Omega(n) means time taken would "atleast" be some constant times n.
