@@ -22,3 +22,9 @@ e.g. Theta(n) means time taken would exactly be equal to some constant times n i
 
 Omega : Exact or Lower.
 e.g. Omega(n) means time taken would "atleast" be some constant times n.
+
+Note :: O notation works for multiple input variables as well.
+e.g. 100n^2 + 100 m + n : O(n^2 + m)
+     100n^2 + 200mn + 30m + 20n : O(n^2 + mn)
+
+Note : When you know of exact bound, always use Theta notation.
