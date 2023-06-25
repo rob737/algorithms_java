@@ -28,3 +28,27 @@ e.g. 100n^2 + 100 m + n : O(n^2 + m)
      100n^2 + 200mn + 30m + 20n : O(n^2 + mn)
 
 Note : When you know of exact bound, always use Theta notation.
+
+Note: Prefer to denote algorithm's complexity by Theta bound as it gives us exact
+      order of growth.
+
+
+---- Asymptotic notation for recursion :
+
+To find asymptotic notation for recursive expression, we follow recursion tree method :
+
+Steps :
+1. Make non recursive part of the expression as the root and the recursive part as children.
+2. Continue step 1 unless the termination condition is satisfied.
+
+e.g. T(n) = 2 T(n/2) + cn
+
+here, non recursive expression is cn so that becomes root and T(n/2) becomes child and so on.
+Above expression will execute for logN times and at each level it takes Cn time so total time
+would be Cn*logN i.e. Theta(nlogn).
+
+Geomteric progression sum formula :
+
+Sn = a1 * (1 - r^n) / 1 - r
+
+where r is the common ratio and a1 is the first term of progression.
