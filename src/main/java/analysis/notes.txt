@@ -52,3 +52,5 @@ Geomteric progression sum formula :
 Sn = a1 * (1 - r^n) / 1 - r
 
 where r is the common ratio and a1 is the first term of progression.
+
+for n -> Infinity, Sn = a1/(1 - r);
