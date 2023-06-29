@@ -58,3 +58,7 @@ for n -> Infinity, Sn = a1/(1 - r);
 ---- Space Complexity :
 
 It is basically order of growth of required memory address in terms of input size.
+
+---- Auxiliary Space :
+
+Order of growth of extra space or temporary space iin terms of input size.
