@@ -12,4 +12,4 @@ MSB is 1 for negative number.
 For 32 bit memory,
 If all bits are set then value is 2^32 - 1.
 
-For unsigned integer , value of ~x = 2^32 - x.
+For unsigned integer , value of ~x = 2^32 - 1 - x.
