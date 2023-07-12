@@ -1,0 +1,8 @@
+Follow this for custom annotation :
+
+https://www.baeldung.com/java-custom-annotation
+
+Aim :
+1. Understand annotations
+2. Create custom annotation and apply it
+3. Understand a very basic annotation in Spring boot and how it is processed
