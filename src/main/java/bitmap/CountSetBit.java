@@ -2,7 +2,7 @@ package bitmap;
 
 public class CountSetBit {
     public static void main(String[] args) {
-        int n = 13;
+        int n = 2;
         int result = countSetBits(n);
         System.out.println("Number of set bits in n : " + result);
     }
@@ -10,6 +10,8 @@ public class CountSetBit {
     /*
     * Auxiliary Space Complexity : theta(1)
     * Time Complexity : theta(1)
+    * Algorithm problem solving is primarily overcoming your confirmation bias.
+    * Best way to tackle confirmation bias is to revisit the problem after 3 days or so.
     * */
 
     private static int countSetBits(int n) {

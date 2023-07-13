@@ -6,3 +6,12 @@ Aim :
 1. Understand annotations
 2. Create custom annotation and apply it
 3. Understand a very basic annotation in Spring boot and how it is processed
+
+
+-----
+
+Annotations offer an alternative to xml descriptors and markers like we used to do:
+<bean id = "" ..., it's replaced with @Bean.
+
+
+Note : We process annotations using Java reflection.
