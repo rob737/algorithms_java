@@ -11,6 +11,7 @@ public class FindTwoOdds {
         int result = findXor(arr);
         // This will give me number that has only rightmost bit set.
         int rightMostSetBit = result & ~(result - 1);
+        System.out.println(7 & ~6);
         findOddOccurring(arr,rightMostSetBit);
     }
 
