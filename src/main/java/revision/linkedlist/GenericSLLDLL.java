@@ -13,7 +13,7 @@ class Node<T> {
 public class GenericSLLDLL {
     public static void main(String[] args) {
         Node one = new Node(5);
-        Node two = new Node("Generic");
+        Node two = new Node("Generic Node");
 
         System.out.println(one.data + " : " + two.data);
     }
