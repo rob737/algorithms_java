@@ -1,33 +1,26 @@
-package annotations;
-
-import annotations.assignment.AuditExecution;
-import annotations.assignment.AuditMethod;
-import annotations.assignment.Pilot;
-import array.Anagram;
+package annotations.blog;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/*
-* Create a custom annotation that prints time taken for algorithm to run if annotated over a method.
-* */
 public class AnnotationProcessor {
-
     public static void main(String[] args) throws InvocationTargetException, IllegalAccessException {
-        Object obj = new Pilot();
+        Object obj = new Driver();
         calculateExecutionTime(obj);
     }
 
-    /*
-    * Similarly, Spring boot must be enumerating all classes in classpath and performing operation based on the annotation defined.
-    * */
     private static void calculateExecutionTime(Object obj) throws InvocationTargetException, IllegalAccessException {
-        Class<?> clazz = obj.getClass();
-        if(!clazz.isAnnotationPresent(AuditExecution.class)){
-            System.out.println("Not annotated");
+        // Gets runtime reference of our object.
+        Class<?> classRef = obj.getClass();
+
+        if(!classRef.isAnnotationPresent(AuditExecution.class)){
+            System.out.println("Class is not annotated with relevant annotation");
+            return;
         }
-        for(Method method : clazz.getDeclaredMethods()){
-            if(method.isAnnotationPresent(AuditMethod.class)){
+
+        // Gets access to each of the methods defined in the class
+        for (Method method : classRef.getDeclaredMethods()) {
+            if (method.isAnnotationPresent(AuditMethod.class)) {
                 var start = System.currentTimeMillis();
                 method.setAccessible(true);
                 method.invoke(obj);
@@ -36,5 +29,4 @@ public class AnnotationProcessor {
             }
         }
     }
-
 }
