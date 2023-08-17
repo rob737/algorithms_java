@@ -13,6 +13,7 @@ public class DistinctCharacterWindow {
         int strLen = str.length, ptrLen = 0;
         int sI=0,eI=0,count=0,minWl=strLen;
 
+        // This is to create ptr string which will contain all the unique characters of str.
         for (char c : str) {
             if (ascii_ptr[c] == 0) {
                 ascii_ptr[c] = 1;
@@ -20,6 +21,7 @@ public class DistinctCharacterWindow {
             }
         }
 
+        // This whole logic is same as minimum window substring.
         while (sI <= eI && eI < strLen){
             ascii_str[str[eI]] +=1;
 
