@@ -15,6 +15,24 @@ public class BasicTraversal {
 
     public static void main(String[] args) {
         Node root = createBST();
+
+        generateInOrder(root);
+        generatePreOrder(root);
+        generatePostOrder(root);
+    }
+
+    private static void generatePostOrder(Node root) {
+    }
+
+    private static void generatePreOrder(Node root) {
+    }
+
+    private static void generateInOrder(Node root) {
+        if(root == null)
+            return;
+        generateInOrder(root.left);
+        System.out.print(root.data + " ");
+        generateInOrder(root.right);
     }
 
     private static Node createBST() {
