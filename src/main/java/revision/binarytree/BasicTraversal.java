@@ -18,6 +18,7 @@ public class BasicTraversal {
     }
 
     private static Node createBST() {
+        // These would be created in metaspace.
         Node thirteen = new BasicTraversal.Node(13);
         Node ten = new BasicTraversal.Node(10);
         Node eight = new BasicTraversal.Node(8);
