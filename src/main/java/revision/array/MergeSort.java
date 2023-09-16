@@ -3,6 +3,7 @@ package revision.array;
 public class MergeSort {
     private static int[] result;
 
+    // Revisit to figure out the issue.
     public static void main(String[] args) {
         int[] arr = {8,4,3,12,25,6,13,10};
         int n = arr.length;
