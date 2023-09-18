@@ -32,7 +32,8 @@ public class MergeSort {
         while (begin <= mid && j <= end){
 
             if(arr[begin] <= arr[j]){
-                result[k++] = arr[begin++];
+                result[k++] = arr[begin];
+                begin++;
             }else{
                 result[k++] = arr[j++];
             }
