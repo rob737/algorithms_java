@@ -15,9 +15,12 @@ public class MergeSort {
     }
 
     private static void mergeSort(int[] arr, int begin, int end) {
-        int mid = (begin+end)/2;
-        if(begin >= mid)
+        // This is a critical condition.
+        /* if(begin>= mid) doesn't work.
+        * */
+        if(begin >= end)
             return;
+        int mid = (begin+end)/2;
 
         // No need to store return value as current value of begin, mid, end will correspond to atomic value.
         mergeSort(arr,begin,mid);
@@ -27,13 +30,12 @@ public class MergeSort {
     }
 
     private static void merge(int[] arr, int begin, int mid, int end) {
-        int k = begin, j = mid+1;
+        int k = begin, j = mid+1, start = begin;
 
         while (begin <= mid && j <= end){
 
             if(arr[begin] <= arr[j]){
-                result[k++] = arr[begin];
-                begin++;
+                result[k++] = arr[begin++];
             }else{
                 result[k++] = arr[j++];
             }
@@ -44,6 +46,10 @@ public class MergeSort {
 
         while (j <= end)
             result[k++]=arr[j++];
+
+        // Copying back to original array is a necessary step.
+        for(int i = start; i<= end; i++)
+            arr[i] =result[i];
 
     }
 }
