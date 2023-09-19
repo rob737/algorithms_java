@@ -3,7 +3,6 @@ package revision.array;
 public class MergeSort {
     private static int[] result;
 
-    // Revisit to figure out the issue.
     public static void main(String[] args) {
         int[] arr = {8,4,3,12,25,6,13,10};
         int n = arr.length;
@@ -16,7 +15,7 @@ public class MergeSort {
 
     private static void mergeSort(int[] arr, int begin, int end) {
         // This is a critical condition.
-        /* if(begin>= mid) doesn't work.
+        /* if(begin>= mid) doesn't work because comparing begin with mid leads to bypass of computation in 2nd half of the array.
         * */
         if(begin >= end)
             return;
@@ -47,7 +46,7 @@ public class MergeSort {
         while (j <= end)
             result[k++]=arr[j++];
 
-        // Copying back to original array is a necessary step.
+        // Copying back to original array is a necessary step as it implies that subset is sorted.
         for(int i = start; i<= end; i++)
             arr[i] =result[i];
 
