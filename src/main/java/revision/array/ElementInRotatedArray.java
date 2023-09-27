@@ -7,7 +7,7 @@ package revision.array;
 public class ElementInRotatedArray {
     public static void main(String[] args) {
         int[] input = {7,8,9,10,1,2,3,4,5,6};
-        int targetElement = 3;
+        int targetElement = 13;
         int n = input.length;
         int targetIndex = findIndexOfTarget(input,targetElement,0,n-1);
         System.out.println("Index of Target Element " + targetIndex);
