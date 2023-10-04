@@ -16,11 +16,6 @@ public class MoveAllZero {
         System.out.println(val);
     }
 
-
-
-
-
-
     private static void moveZeroToEnd(int[] input) {
         /*
         * I think, we can use 2 pointer technique here.
@@ -31,10 +26,13 @@ public class MoveAllZero {
         int n = input.length;
 
         while (rear < n){
+
+            /*
+            * There is no need to use loop here because next condition of swapping elements
+            * will only take place if front is pointing to 0.
+            * */
             if(input[front]!=0)
                 front++;
-
-
 
             if(front < rear && input[front] == 0 && input[rear]!=0){
                 int temp = input[front];
