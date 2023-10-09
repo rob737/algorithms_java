@@ -23,7 +23,20 @@ public class ConnectedGraph {
     private static boolean isGraphConnected(int[] vertices) {
         for(int val : vertices){
             Set<Integer> visited = new HashSet<>();
-            isConnected();
+            isConnected(val,visited);
+            // check if it contains all the elements.
+            if(visited.size() != vertices.length)
+                return false;
+        }
+        return true;
+    }
+
+    private static void isConnected(int val, Set<Integer> visited) {
+        visited.add(val);
+        LinkedList<Integer> neighbours = graph.get(val);
+        for(int neighbour : neighbours){
+            if(!visited.contains(neighbour))
+                isConnected(neighbour,visited);
         }
     }
 
