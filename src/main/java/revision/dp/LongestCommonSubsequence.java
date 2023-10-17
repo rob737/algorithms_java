@@ -3,7 +3,7 @@ package revision.dp;
 public class LongestCommonSubsequence {
 
     public static void main(String[] args) {
-        String str = "ABCDEF", ptr = "AEDNEK";
+        String ptr = "ABCDEF", str = "AEDNEK";
         System.out.println("LCS length is : " + calculateLCSLength(str,ptr));
     }
 
@@ -21,10 +21,14 @@ public class LongestCommonSubsequence {
         for(int j=0; j<=n ; j++)
             lcsCountArr[0][j] = 0;
 
+        for(int i=1; i<=m ; i++)
+            for(int j =1; j<=n; j++){
+                if(str.charAt(i-1) == ptr.charAt(j-1))
+                    lcsCountArr[i][j] = lcsCountArr[i-1][j-1] + 1;
+                else
+                    lcsCountArr[i][j] = Math.max(lcsCountArr[i][j-1],lcsCountArr[i-1][j]);
+            }
 
-
-
-
-        return 0;
+        return lcsCountArr[m-1][n-1];
     }
 }
