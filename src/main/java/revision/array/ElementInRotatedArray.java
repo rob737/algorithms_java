@@ -28,6 +28,7 @@ public class ElementInRotatedArray {
             return mid;
 
         // This condition is to confirm that elements from begin to mid is increasingly sorted.
+        // This is the way to find mid point.
         if(input[begin] <= input[mid]){
 
             if(targetElement >= input[begin] && targetElement <= input[mid])
