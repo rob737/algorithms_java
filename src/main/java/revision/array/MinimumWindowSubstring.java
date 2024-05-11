@@ -6,6 +6,12 @@ public class MinimumWindowSubstring {
         String str = "ADOBECODEBANC";
         String ptr = "ABCA";
 
+        /*
+        * Pattern to identify Minimum Window Substring :
+        * Problem asks us to match items within a range.
+        *
+        * */
+
         String result = computeMinimumWindow(str, ptr);
         System.out.println("Minimum Window substring is : " + result);
     }
@@ -38,6 +44,7 @@ public class MinimumWindowSubstring {
 
             if (count == ptrLen && str.charAt(sI) == str.charAt(eI)) {
 
+                // This is to reduce window length under the pretext to remove extra elements from the window.
                 while (ascii_ptr[str.charAt(sI)] != ascii_str[str.charAt(sI)]) {
                     //if (ascii_str[str.charAt(sI)] > 1) {
                         ascii_str[str.charAt(sI)]--;
