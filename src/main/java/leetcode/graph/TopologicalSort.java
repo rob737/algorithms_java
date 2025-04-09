@@ -34,15 +34,18 @@ public class TopologicalSort {
     }
 
     private static void topologicalSort(int key) {
+        // This is to capture that pre-requisite node is visited.
         for(int i = 0; i<adj.get(key).size(); i++){
             int neighbour = adj.get(key).get(i);
             if(dependencyCounter.get(neighbour) >=0)
                 dependencyCounter.put(neighbour,dependencyCounter.get(neighbour)-1);
         }
 
+        // This is to figure out next node to hop on.
         for(int i = 0; i<adj.get(key).size(); i++) {
             int neighbour = adj.get(key).get(i);
             if (dependencyCounter.get(neighbour) == 0) {
+                // This is to prevent revisit as we are visiting nodes only if all pre-requisites are completed.
                 dependencyCounter.put(neighbour,-1);
                 resultSet.add(neighbour);
                 topologicalSort(neighbour);
@@ -52,9 +55,6 @@ public class TopologicalSort {
 
     private static void createEdge(int src, int dest) {
         adj.get(src).add(dest);
-        if(dependencyCounter.get(dest) == null)
-            dependencyCounter.put(dest,1);
-        else
-            dependencyCounter.put(dest,dependencyCounter.get(dest)+1);
+        dependencyCounter.merge(dest, 1, Integer::sum);
     }
 }

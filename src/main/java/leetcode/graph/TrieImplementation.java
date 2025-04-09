@@ -1,6 +1,6 @@
 package leetcode.graph;
 import java.util.HashMap;
-
+//Trie is storage efficient fixed dictionary (i.e. list of words) data structure.
 public class TrieImplementation {
     static class TrieNode {
         boolean isEndOfword;
