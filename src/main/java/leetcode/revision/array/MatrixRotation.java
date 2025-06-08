@@ -1,4 +1,4 @@
-package leetcode.revision;
+package leetcode.revision.array;
 
 public class MatrixRotation {
     static int N =4;

@@ -1,4 +1,4 @@
-package leetcode.revision;
+package leetcode.revision.array;
 
 public class RowWithMaxOne {
     public static void main(String[] args) {

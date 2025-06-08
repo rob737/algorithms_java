@@ -1,4 +1,4 @@
-package leetcode.revision;
+package leetcode.revision.array;
 
 /*
 * This is an implementation of Kadane's Algorithm.

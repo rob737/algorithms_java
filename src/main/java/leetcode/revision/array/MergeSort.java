@@ -1,4 +1,4 @@
-package leetcode.revision;
+package leetcode.revision.array;
 
 import java.util.Arrays;
 
